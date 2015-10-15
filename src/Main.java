@@ -10,11 +10,10 @@ import javax.swing.colorchooser.ColorSelectionModel;
 
 public class Main extends Component
 {
-	int circleY = 0;
-	Ellipse2D.Double raindrop = new Ellipse2D.Double(50.0, circleY, 50.0, 50.0);
-	Ellipse2D.Double raindrop2 = new Ellipse2D.Double(100.0, circleY, 50.0, 50.0);
-	Ellipse2D.Double raindrop3 = new Ellipse2D.Double(150.0, circleY, 50.0, 50.0);
-	Ellipse2D.Double raindrop4 = new Ellipse2D.Double(200.0, circleY, 50.0, 50.0);
+	Ellipse2D.Double raindrop = new Ellipse2D.Double(50.0, 5, 50.0, 50.0);
+	Ellipse2D.Double raindrop2 = new Ellipse2D.Double(100.0, 5, 50.0, 50.0);
+	Ellipse2D.Double raindrop3 = new Ellipse2D.Double(150.0, 5, 50.0, 50.0);
+	Ellipse2D.Double raindrop4 = new Ellipse2D.Double(200.0, 5, 50.0, 50.0);
 	JFrame gameFrame = new JFrame();
 	int width = Toolkit.getDefaultToolkit().getScreenSize().width / 2;
 	int length = Toolkit.getDefaultToolkit().getScreenSize().height / 2;
@@ -37,6 +36,10 @@ public class Main extends Component
 
 	public void paint(Graphics g)
 	{
+		raindrop.y += 1;
+		raindrop2.y += 1;
+		raindrop3.y += 1;
+		raindrop4.y += 1;
 		Graphics2D g2 = (Graphics2D) g;
 		g.drawRect(20, 20 + y, 25, 25);
 		g.setColor(Color.BLUE);
@@ -47,6 +50,5 @@ public class Main extends Component
 		g2.draw(raindrop4);
 		repaint();
 		y += 1;
-		circleY += 1;
 	}
 }
